@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicio Técnico de PC y Notebooks</title>
+    <!-- Meta tags para vista previa en WhatsApp y redes sociales -->
+    <meta property="og:title" content="Servicio Técnico de PC y Notebooks">
+    <meta property="og:description" content="Instalación de programas, limpieza de software y reparación de hardware. ¡Presupuesto sin cargo!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&q=80&w=600">
+    <meta property="og:type" content="website">
+
+    <!-- Fuente moderna -->
+    <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* VARIABLES DE COLOR */
+        :root {
+            --blanco: #ffffff;
+            --gris-claro: #f4f7f6;
+            --azul-oscuro: #003366;
+            --azul-acento: #004a99;
+            --naranja: #ff8c00;
+            --naranja-hover: #e67e00;
+            --texto: #333333;
+            --sombra: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        /* RESET GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--texto);
+            background-color: var(--blanco);
+        }
+
+        /* UTILIDADES */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: var(--naranja);
+            color: var(--blanco);
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s ease;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 10px rgba(255, 140, 0, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--naranja-hover);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 102, 0.9), rgba(0, 51, 102, 0.9)), 
+                        url('https://images.unsplash.com/photo-1588702547919-26089e690ecc?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--blanco);
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        /* SECCIÓN SOBRE NOSOTROS (MISIÓN/VISIÓN) */
+        .about {
+            padding: 80px 0;
+            background-color: var(--gris-claro);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--azul-oscuro);
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .mission-vision {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .about-card {
+            background: var(--blanco);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: var(--sombra);
+            border-left: 5px solid var(--naranja);
+        }
+
+        .about-card i {
+            font-size: 1.5rem;
+            color: var(--naranja);
+            margin-bottom: 10px;
+        }
+
+        /* SERVICIOS (GRID) */
+        .services {
+            padding: 80px 0;
+            background-color: var(--blanco);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2.2rem;
+            color: var(--azul-oscuro);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: var(--gris-claro);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border-bottom: 4px solid var(--azul-oscuro);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            background: var(--blanco);
+            box-shadow: var(--sombra);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: var(--azul-acento);
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--azul-oscuro);
+        }
+
+        /* BENEFICIOS (COLUMNAS) */
+        .benefits {
+            padding: 60px 0;
+            background-color: var(--azul-oscuro);
+            color: var(--blanco);
+        }
+
+        .benefits-columns {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            text-align: center;
+            gap: 30px;
+        }
+
+        .benefit-item {
+            flex: 1;
+            min-width: 250px;
+            padding: 20px;
+        }
+
+        .benefit-item i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .benefit-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--naranja);
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #1a1a1a;
+            color: var(--blanco);
+            padding: 50px 0 20px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+            gap: 40px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 20px;
+            border-left: 3px solid var(--naranja);
+            padding-left: 10px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECCIÓN HERO -->
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Servicio Técnico de PC y Notebooks</h1>
+                <p>Instalación de programas, limpieza de software y reparación de hardware</p>
+                <!-- ========================================== -->
+                <!-- 🔴 ACÁ DEBES ACTUALIZAR TU WHATSAPP 🔴 -->
+                <!-- Cambia "5491100000000" por tu número real sin espacios -->
+                <!-- ========================================== -->
+                <a href="https://wa.me/5491100000000?text=Hola!%20Vi%20tu%20página%20web%20y%20quisiera%20hacer%20una%20consulta%20técnica." class="btn-whatsapp">Consultar por WhatsApp</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- SECCIÓN SOBRE NOSOTROS -->
+    <section class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Compromiso con la Excelencia Técnica</h2>
+                    <p>En nuestro taller, no solo reparamos equipos, devolvemos herramientas de trabajo y estudio a su máximo potencial.</p>
+                </div>
+                <div class="mission-vision">
+                    <div class="about-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Nuestra Misión</h3>
+                        <p>Brindar un servicio técnico honesto, rápido y de alta calidad para que la tecnología sea siempre una solución y no un problema.</p>
+                    </div>
+                    <div class="about-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Nuestra Visión</h3>
+                        <p>Ser el soporte de confianza número uno de la zona, reconocidos por nuestra transparencia y conocimiento especializado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN SERVICIOS -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-tools"></i>
+                    <h3>Reparación de Hardware</h3>
+                    <p>Cambio de pantallas, teclados, discos SSD y reparación de placas base.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fab fa-windows"></i>
+                    <h3>Sistemas Operativos</h3>
+                    <p>Instalación y configuración de Windows y Linux con drivers actualizados.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shield-virus"></i>
+                    <h3>Eliminación de Virus</h3>
+                    <p>Limpieza profunda de malware, spyware y protección de tus datos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Optimización de Software</h3>
+                    <p>Aceleramos tu equipo eliminando procesos innecesarios y archivos basura.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-broom"></i>
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Limpieza física interna y cambio de pasta térmica para evitar sobrecalentamiento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN BENEFICIOS -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-columns">
+                <div class="benefit-item">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Presupuesto sin cargo</h3>
+                    <p>Evaluamos tu equipo y te damos un diagnóstico honesto sin compromisos.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-home"></i>
+                    <h3>Atención a domicilio</h3>
+                    <p>Vamos a tu casa u oficina para solucionar problemas técnicos en el lugar.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Garantía de satisfacción</h3>
+                    <p>Todos nuestros trabajos cuentan con respaldo y garantía escrita.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <!-- ========================================== -->
+                    <!-- 🔴 ACÁ DEBES ACTUALIZAR TU TELÉFONO Y EMAIL 🔴 -->
+                    <!-- ========================================== -->
+                    <p>📞 Tel: +54 9 11 0000-0000</p>
+                    <p>📧 Email: tu-correo@ejemplo.com</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Horarios</h4>
+                    <!-- ========================================== -->
+                    <!-- 🔴 ACÁ DEBES ACTUALIZAR TUS HORARIOS 🔴 -->
+                    <!-- ========================================== -->
+                    <p>Lunes a Viernes: 09:00 - 19:00</p>
+                    <p>Sábados: 10:00 - 14:00</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Redes Sociales</h4>
+                    <!-- ========================================== -->
+                    <!-- 🔴 ACÁ DEBES ACTUALIZAR TUS REDES SOCIALES 🔴 -->
+                    <!-- Cambia el "#" por el link a tu perfil -->
+                    <!-- ========================================== -->
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <!-- ========================================== -->
+                <!-- 🔴 ACÁ DEBES ACTUALIZAR EL NOMBRE DE TU NEGOCIO 🔴 -->
+                <!-- ========================================== -->
+                &copy; 2024 Servicio Técnico IT - Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
